@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@bazel/bazelisk": "latest",
+    "@bazel/buildifier": "latest",
+    "@bazel/ibazel": "latest"
+  },
+  "scripts": {
+    "example": "bazel run //:example",
+    "example_nopatch": "bazel run //:example_nopatch"
+  },
+  "dependencies": {
+    "print-dir": "../print-dir"
+  }
+}

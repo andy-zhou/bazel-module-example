@@ -1,0 +1,23 @@
+# Add rules here to build your software
+# See https://docs.bazel.build/versions/master/build-ref.html#BUILD_files
+
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+
+nodejs_binary(
+  name = "example",
+  entry_point = ":example.js",
+  data = [
+    "@npm//print-dir",
+  ],
+)
+
+nodejs_binary(
+  name = "example_nopatch",
+  entry_point = ":example.js",
+  data = [
+    "@npm//print-dir",
+  ],
+  templated_args = [
+    "--nobazel_patch_module_resolver"
+  ],
+)
